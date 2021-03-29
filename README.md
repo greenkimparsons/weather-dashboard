@@ -14,6 +14,9 @@ I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 ```
 
+## Description
+First starting off with a hardcoded wireframe of the weather dashboard. 
+
 ## Acceptance Criteria
 
 ```
