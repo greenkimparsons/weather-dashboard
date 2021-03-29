@@ -76,12 +76,35 @@ searchForm.on("submit", function () {
 //     "&appid=" +
 //     apiKey;
 
+    
+
   fetch(queryURL1) //fetching for current weather in a city
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
-      console.log(data.main); //gives you the data in array of objects
+        var currentTemp = data.main.temp;
+        var currentHumidity = data.main.humidity;
+        var currentWindSpeed = data.wind.speed;
+
+        var latitude = data.coord.lat;
+        var longitude = data.coord.lon;
+
+        var queryURLforUV = 
+            "http://api.openweathermap.org/data/2.5/uvi?lat=" +
+            latitude + "&lon=" + longitude + "&appid=" + apiKey;
+
+            fetch(queryURLforUV) //fetching for current weather in a city
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                var currentUVIndex = data.value;
+                console.log(currentUVIndex); //gives you the data in array of objects
+            });
+
+        
+
 
   //     weatherDisplay.empty(); //emptying out the storage
 
