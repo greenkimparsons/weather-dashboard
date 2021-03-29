@@ -1,4 +1,9 @@
-h1 {
+
+  .jumbotron {
     font-size: 2em;
-    margin: 0.67em 0;
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    border-radius: 0;
+    border-bottom: 10px solid black;
   }

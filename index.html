@@ -14,7 +14,7 @@
     <title>Document</title>
   </head>
   <header>
-    <h1>Weather Dashboard</h1>
+    <h1 class="jumbotron">Weather Dashboard</h1>
   </header>
   <body>
       <main>
@@ -22,25 +22,52 @@
               <aside class="col-sm-3">
                   <form id = "search-form"> 
                       <div class="form-group">
-                          <input type="text" class="form-control" id="search-term" />
+                          <input type="text" class="form-control" id="search-city" />
                           <button type="submit" class="btn btn-primary">Search</button>
                       </div>
                   </form>
               </aside>
-              <section class="col-sm-9">
+              <!-- <main class="col-sm-9">
+                <h2><span id="search-city">City</h2>
+                <span class="p" id="current-date"></span>
                 <div class="row" id="images-display">
-                  <h2>City</h2>
-                  <span class="p" id="current-date"></span>
-                    <p>Temperature: </p>>
-                    <p>Humidity: </p>
-                    <p>Wind  Speed: </p>
-                    <p>UV Index: </p>
+                  <div id="result-content"></div>
+                  <option value="temperature">Temperature: </option>
+                  <option value="humidity">Humidity: </option>
+                  <option value="windSpeed">Wind Speed: </option>
+                  <option value="uvIndex">UV Index: </option>
                 </div>
-            </section>
+              </main> -->
               <section class="col-sm-9"> 
                   <!-- //different api endpoint -->
-                  <div class="row" id="images-display">
-                    <h2>5-Day Forecast</h2>
+                  <h2>5-Day Forecast</h2>
+                  <!-- id = images-display -->
+                  <div class="row" id="weather-display">
+                    <img
+                      class="col-sm-4"
+                      src="https://media3.giphy.com/media/n1mNS67yQhtzzAN5H3/100w.gif?cid=fb87dcd3ebcnhx1guypk2f408bb2pma2xr1qky2s7shh9us1&rid=100w.gif"
+                      alt="weather"
+                    />
+                    <img
+                      class="col-sm-4"
+                      src="https://media3.giphy.com/media/n1mNS67yQhtzzAN5H3/100w.gif?cid=fb87dcd3ebcnhx1guypk2f408bb2pma2xr1qky2s7shh9us1&rid=100w.gif"
+                      alt="weather"
+                    />
+                    <img
+                      class="col-sm-4"
+                      src="https://media3.giphy.com/media/n1mNS67yQhtzzAN5H3/100w.gif?cid=fb87dcd3ebcnhx1guypk2f408bb2pma2xr1qky2s7shh9us1&rid=100w.gif"
+                      alt="weather"
+                    />
+                    <img
+                      class="col-sm-4"
+                      src="https://media3.giphy.com/media/n1mNS67yQhtzzAN5H3/100w.gif?cid=fb87dcd3ebcnhx1guypk2f408bb2pma2xr1qky2s7shh9us1&rid=100w.gif"
+                      alt="weather"
+                    />
+                    <img
+                      class="col-sm-4"
+                      src="https://media3.giphy.com/media/n1mNS67yQhtzzAN5H3/100w.gif?cid=fb87dcd3ebcnhx1guypk2f408bb2pma2xr1qky2s7shh9us1&rid=100w.gif"
+                      alt="weather"
+                    />
                   </div>
               </section>
           </div>
