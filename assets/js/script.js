@@ -67,7 +67,8 @@ searchForm.on("submit", function () {
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     searchCity +
     "&appid=" +
-    apiKey;
+    apiKey + 
+    "&units=imperial";
     
 //   var queryURL2 =
 //     "https://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -80,7 +81,7 @@ searchForm.on("submit", function () {
         return response.json();
     })
     .then(function (data) {
-      console.log(data); //gives you the data
+      console.log(data.main); //gives you the data in array of objects
 
   //     weatherDisplay.empty(); //emptying out the storage
 
