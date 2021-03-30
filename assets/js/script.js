@@ -9,8 +9,9 @@ var temperature = $("#temperature");
 var humidity = $("#humidity");
 var windSpeed = $("#windSpeed");
 var uvIndex = $("#uvIndex");
+var city = $("#city");
 
-
+var apiKey = "df4009a9dada03515b39dfea64490243";
 
 function updateCurrentDate() {
   currentDateSpan.text(moment().format("l"));
@@ -26,8 +27,10 @@ searchForm.on("submit", function () {
 
   var searchCity = searchCityEl.val();
   console.log(searchCity);
+  //capitalize first letter from input
+  city.text(searchCity.charAt(0).toUpperCase() + searchCity.slice(1));
 
-  var apiKey = "df4009a9dada03515b39dfea64490243";
+  
 
   var queryURL1 =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -36,12 +39,6 @@ searchForm.on("submit", function () {
     apiKey + 
     "&units=imperial";
     
-//   var queryURL2 =
-//     "https://api.openweathermap.org/data/2.5/forecast?q=" +
-//     searchCity +
-//     "&appid=" +
-//     apiKey;
-
     
 
   fetch(queryURL1) //fetching for current weather in a city
@@ -62,7 +59,7 @@ searchForm.on("submit", function () {
         var longitude = data.coord.lon;
 
         var queryURLforUV = 
-            "http://api.openweathermap.org/data/2.5/uvi?lat=" +
+            "https://api.openweathermap.org/data/2.5/uvi?lat=" +
             latitude + "&lon=" + longitude + "&appid=" + apiKey;
 
             fetch(queryURLforUV) //fetching for lat and lon in a city
@@ -73,36 +70,42 @@ searchForm.on("submit", function () {
                 var currentUVIndex = data.value;
                 // console.log(currentUVIndex); //gives you the data in array of objects
                 uvIndex.text(currentUVIndex);
+                uvIndex.addClass("uv-index-color");
+                uvIndex.append();
 
                 if (currentUVIndex >= 0 && currentUVIndex < 2) {
-                  uvButtonEl.attr(".bg-success");
+                  uvIndex.addClass("btn-success");
                 } else if (currentUVIndex >= 3 && currentUVIndex <= 5) {
-                  uvButtonEl.attr(".bg-warning");
+                  uvIndex.addClass("btn-warning");
                 } else if (currentUVIndex < 5) {
-                  uvButtonEl.attr(".bg-danger");
+                  uvIndex.addClass("btn-danger");
                 }
             
-                uvIndex.append(uvButtonEl);
             });
 
     });
-    
+  
+  // var queryURL2 =
+  //   "https://api.openweathermap.org/data/2.5/forecast/daily?q=" +
+  //   searchCity +
+  //   "&cnt=5&appid=" +
+  //   apiKey;
 
-  // fetch(queryURL)
-  //     .then(function (response){
-  //         return response.json();
+  //   console.log(queryURL2);
+
+  // fetch(queryURL2)
+  //     .then(function (response2){
+  //       return response2.json();
   //     })
-  //     .then(function (data) {
-  //         console.log(data.data[0]).city.name;
+  //     .then(function (data2) {
+  //       // var accessForecastArr = data;
+  //       console.log(data2);
 
-  //         weatherDisplay.empty(); //emptying out the storage
-
-  //         for(var i = 0; i < data.data.length; i++) { //looping through the array to show only a certain amount of data/info
-  //             var imageEl = $("<img>");
-  //             imageEl.addClass("col-sm-4");
-  //             imageEl.attr("src", data.data[0].city.name);
-  //             weatherDisplay.append(imageEl);
-  //         }
+  //       // for(var i =0; i < accessForecastArr.length; i+1) {
+  //       //   var accessForecastTemp = accessForecastArr.main.temp;
+  //       //   console.log(accessForecastArr[i].main.temp);
+  //       // }
+  //         // console.log(data.list[0].main.feels_like);
 
   //     });
 });
