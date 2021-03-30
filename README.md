@@ -1,21 +1,10 @@
 # 06 Server-Side APIs: Weather Dashboard
 
-## Your Task
-
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
-
 Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that provides basic setup and usage instructions. You will use `localStorage` to store any persistent data.
-
-## User Story
-
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
-
 ## Description
 First starting off with a hardcoded wireframe of the weather dashboard. 
+Second worked on the Search form to retrieve data from Weather api.
+Third worked on the current weather in a city section by accessing different keys of the array of objects and query parameters. Got it to console.log successfully and need to get it to appear on the page next.
 
 ## Acceptance Criteria
 
@@ -32,16 +21,6 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
-
-## Mock-Up
-
-The following image shows the web application's appearance and functionality:
-
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./Assets/06-server-side-apis-homework-demo.png)
-
-## Grading Requirements
-
-This homework is graded based on the following criteria: 
 
 ### Technical Acceptance Criteria: 40%
 
@@ -61,13 +40,6 @@ This homework is graded based on the following criteria:
 
 * GitHub repository that contains application code.
 
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
 
 ### Repository Quality: 13%
 
@@ -77,17 +49,5 @@ This homework is graded based on the following criteria:
 
 * Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
 
-* Repository contains multiple descriptive commit messages.
 
 * Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
