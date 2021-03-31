@@ -13,67 +13,68 @@
     <link rel="stylesheet" href="./assets/style/style.css" />
     <title>Document</title>
   </head>
+
   <header>
-    <h1 class="jumbotron">Weather Dashboard</h1>
+    <h1>Weather Dashboard</h1>
   </header>
 
   <body>
-    <div class="">
-    <div class="">
+
+    <div class="col-12">
       <aside class="col-3">
-        <form id = "search-form"> 
-          <div class="form-group">
-            <input type="text" class="form-input w-100" id="search-city" placeholder="Search for a City"/>
-            <button type="submit" class="btn btn-info btn-block">Search</button>
-            <ul id="search-list"></ul>
-          </div>
+        <form class="form-group" id = "search-form"> 
+          <input type="text" class="form-input" id="search-city" placeholder="Search for a City"/>
+          <button type="submit" class="btn btn-info btn-block">Search</button>
+          <ul id="search-list"></ul>
         </form>
       </aside>
     </div>
-      <section class="current-weather">
-        <h2><span id="city">City</h2>
-        <span class="p" id="current-date"></span>
-        <div class="row">
-          <div id="result-content"></div>
-            <p class="current">Temperature: <span id="temperature"></span></p>
-            <p class="current">Humidity: <span id="humidity"></span></p>
-            <p class="current">Wind Speed: <span id="windSpeed"></span></p> 
-            <p class="current">UV Index: <span id="uvIndex"></span></p>
+
+    <section class="row" id="current-weather">
+      <div class="row">
+        <h2><span id="city" style="padding-right: 20px;"></h2>
+        <h2><span id="current-date"></span></h2>  
+      </div>
+    </section>
+    <section class="row">
+      <div class= "row" id="result-content">
+        <p class="current">Temperature: <span id="temperature"></span></p>
+        <p class="current">Humidity: <span id="humidity"></span></p>
+        <p class="current">Wind Speed: <span id="windSpeed"></span></p> 
+        <p class="current">UV Index: <span id="uvIndex"></span></p>
+      </div>
+    </section>
+
+    <section class="forecasted-weather"> 
+      <h2>5-Day Forecast</h2>
+        <div class="row" id="weather-display">
+          <div class="card">
+            <p class="forecast">Date: <span id="Day1"></span></p>
+            <p class="forecast">Temp: <span id="Temp1"></span></p>
+            <p class="forecast">Humidity: <span id="Humid1"></span></p>
           </div>
-      </section>
-        <section class="current-weather"> 
-          <!-- //different api endpoint -->
-          <h2>5-Day Forecast</h2>
-            <!-- id = images-display -->
-            <div class="row" id="weather-display">
-              <img
-                class="col-sm-3"
-                src="https://media3.giphy.com/media/n1mNS67yQhtzzAN5H3/100w.gif?cid=fb87dcd3ebcnhx1guypk2f408bb2pma2xr1qky2s7shh9us1&rid=100w.gif"
-                alt="weather"
-              />
-              <img
-                class="col-sm-3"
-                src="https://media3.giphy.com/media/n1mNS67yQhtzzAN5H3/100w.gif?cid=fb87dcd3ebcnhx1guypk2f408bb2pma2xr1qky2s7shh9us1&rid=100w.gif"
-                alt="weather"
-              />
-              <img
-                class="col-sm-3"
-                src="https://media3.giphy.com/media/n1mNS67yQhtzzAN5H3/100w.gif?cid=fb87dcd3ebcnhx1guypk2f408bb2pma2xr1qky2s7shh9us1&rid=100w.gif"
-                alt="weather"
-              />
-              <img
-                class="col-sm-3"
-                src="https://media3.giphy.com/media/n1mNS67yQhtzzAN5H3/100w.gif?cid=fb87dcd3ebcnhx1guypk2f408bb2pma2xr1qky2s7shh9us1&rid=100w.gif"
-                alt="weather"
-              />
-              <img
-                class="col-sm-3"
-                src="https://media3.giphy.com/media/n1mNS67yQhtzzAN5H3/100w.gif?cid=fb87dcd3ebcnhx1guypk2f408bb2pma2xr1qky2s7shh9us1&rid=100w.gif"
-                alt="weather"
-              />
-            </div>
-        </section>
-    </div>
+          <div class="card">
+            <p class="forecast">Date: <span id="Day2"></span></p>
+            <p class="forecast">Temp: <span id="Temp2"></span></p>
+            <p class="forecast">Humidity: <span id="Humid2"></span></p>
+          </div>
+          <div class="card">
+            <p class="forecast">Date: <span id="Day3"></span></p>
+            <p class="forecast">Temp: <span id="Temp3"></span></p>
+            <p class="forecast">Humidity: <span id="Humid3"></span></p>
+          </div>
+          <div class="card">
+            <p class="forecast">Date: <span id="Day4"></span></p>
+            <p class="forecast">Temp: <span id="Temp4"></span></p>
+            <p class="forecast">Humidity: <span id="Humid4"></span></p>
+          </div>
+          <div class="card">
+            <p class="forecast">Date: <span id="Day5"></span></p>
+            <p class="forecast">Temp: <span id="Temp5"></span></p>
+            <p class="forecast">Humidity: <span id="Humid5"></span></p>
+          </div>              
+        </div>
+    </section>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"

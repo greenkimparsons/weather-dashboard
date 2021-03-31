@@ -4,121 +4,139 @@
   box-sizing: border-box;
 }
 
-  body {
-    margin: 0;
-  }
+header {
+  padding: 4rem;
+  color: navy;
+  text-align: center;
+  background-color: lightskyblue;
+  border-bottom: 7px solid navy;
+  margin-bottom: 40px;
+}
 
-  aside {
-    float: left;
-    margin: 0 1.5%;
-    width: 30%;
-  }
-  
-  .jumbotron {
-    font-size: 2em;
-    text-align: center;
-    background-color: transparent;
-    color: black;
-    border-radius: 0;
-    border-bottom: 10px solid black;
-  }
+body {
+  margin: 0;
+}
 
+aside {
+  float: left;
+  margin: 0 1.5%;
+  width: 30%;
+}
 
-/* display */
-  .form-input {
-    display: block;
-    padding: 7px;
-    padding-left: 15px;
-  }
+.col-3 {
+  padding-left: 40px;
+}
 
-  .current {
-    padding-right: 20px;
-  }
+.form-input {
+  padding: 7px;
+  padding-left: 15px;
+  width: 100%;
+}
 
+.row {
+  padding-left: 20px;
+}
 
-  .current-weather {
-    float: right;
-    margin: 0 1.5%;
-    width: 65%;
-    align-items: left;
-  }
+#current-weather {
+  display: grid;
+}
 
-  .w-100 {
-    width: 100%;
-  }
+#result-content {
+  display: inline-block;
+}
 
-  .btn {
-    text-align: center;
-    display: inline-block;
-    padding: 0.5rem 1.2rem;
-    margin: 0;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 0.3rem;
-    border: 1px solid transparent;
-    outline: none;
-    color: #1a1a1a;
-    background-color: #aeaeae;
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  }
+.current {
+  padding-top: 20px;
+}
 
-  .btn:hover {
-    background-color: #cecece;
-  }
+.forecasted-weather {
+  float: right;
+  width: 71%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
 
-  #weather-display {
-    display: flex;
-  }
+.btn {
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid transparent;
+  outline: none;
+  color: #1a1a1a;
+  background-color: #aeaeae;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
 
-  .uv-index-color{
-    padding: 5px;
-    border-radius: 0.3rem;
-  }
+.btn:hover {
+  background-color: #cecece;
+}
 
-  .good {
-    background-color:green;
-    color: white;
-  }
-  
-  .moderate {
-    background-color:yellow;
-    color: white;
-  }
-  
-  .bad {
-    background-color: red;
-    color: white;
-  }
+#weather-display {
+  display: flex;
+  padding-bottom: 20px;
+}
 
+.uv-index-color {
+  padding: 5px;
+  border-radius: 0.3rem;
+}
 
-  li {
-    height: 50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
-    background-color:  #001b44;
-    color: white;
-    font-size: 1.5em;
-    line-height: 1.5;
-  }
-  
-  li:before {
-    content: "\200B";
-    position: absolute;
-  }
-  
-  li::after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
-  
-  li button {
-    float: right;
-    border: none;
-    height: 40px;
-    cursor: pointer;
-    background-color: #ff7034;
-    color: white;
-    font-size: 1em;
-  }
+.good {
+  background-color: green;
+  color: white;
+}
+
+.moderate {
+  background-color: yellow;
+  color: black;
+}
+
+.bad {
+  background-color: red;
+  color: white;
+}
+
+li {
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #001b44;
+  color: white;
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+li:before {
+  content: "\200B";
+  position: absolute;
+}
+
+li::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+li button {
+  float: right;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+  background-color: #ff7034;
+  color: white;
+  font-size: 1em;
+}
+
+.card {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  padding-bottom: 70px;
+  margin-right: 20px;
+  width: 12rem;
+}

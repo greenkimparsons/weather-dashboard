@@ -95,7 +95,7 @@ searchForm.on("submit", function () {
             uvIndex.addClass("good");
           } else if (currentUVIndex >= 3 && currentUVIndex <= 5) {
             uvIndex.addClass("moderate");
-          } else if (currentUVIndex < 5) {
+          } else if (currentUVIndex > 5) {
             uvIndex.addClass("bad");
           }
         });
