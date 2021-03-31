@@ -11,6 +11,22 @@ var windSpeed = $("#windSpeed");
 var uvIndex = $("#uvIndex");
 var city = $("#city");
 
+var for_day1 = $("#day1");
+var for_day2 = $("#day2");
+var for_day3 = $("#day3");
+var for_day4 = $("#day4");
+var for_day5 = $("#day5");
+var for_temp1 = $("#temp1");
+var for_temp2 = $("#temp2");
+var for_temp3 = $("#temp3");
+var for_temp4 = $("#temp4");
+var for_temp5 = $("#temp5");
+var for_humid1 = $("#humid1");
+var for_humid2 = $("#humid2");
+var for_humid3 = $("#humid3");
+var for_humid4 = $("#humid4");
+var for_humid5 = $("#humid5");
+
 var apiKey = "df4009a9dada03515b39dfea64490243";
 
 function updateCurrentDate() {
@@ -18,6 +34,12 @@ function updateCurrentDate() {
 }
 
 updateCurrentDate();
+
+// function forecastDay1() {
+//   for_day1.text(moment().add(1, 'days').calendar());
+// }
+
+// forecastDay1;
 
 searchForm.on("submit", function () {
   //jQuery eventListener
@@ -112,30 +134,49 @@ searchForm.on("submit", function () {
       
         console.log(queryURL2);
       
-        fetch(queryURL2)
-          .then(function (response2) {
-            return response2.json();
-          })
-          .then(function (data2) {
-            // var accessForecastArr = data;
-            console.log(data2.daily);
+      fetch(queryURL2)
+        .then(function (response2) {
+          return response2.json();
+        })
+        .then(function (data2) {
+          
+          var forecast = data2.daily;
+          // console.log(forecast);
 
-            var forecastTemp = data2.daily;
+          // for(var i =0; i < forecast.length; i++) {
+          //   var forecastTemp = forecast[i].feels_like.day;
+          //   var forecastHumid = forecast[i].humidity;
 
-            for(var i =0; i < forecastTemp.length; i++) {
-              var forecastHumidity = forecastTemp[i].feels_like.day;
-              console.log(forecastHumidity);
-            }
+          //   var addCard = weatherDisplay.append("<div>")
+          //   addCard.addClass("card")
 
-            // temperature.text(currentTemp + "° F");
-            // humidity.text(currentHumidity + "%");
-            // windSpeed.text(currentWindSpeed + " MPH");
-      
-            // for(var i =0; i < accessForecastArr.length; i+1) {
-            //   var accessForecastTemp = accessForecastArr.main.temp;
-            //   console.log(accessForecastArr[i].main.temp);
-            // }
-            // console.log(data.list[0].main.feels_like);
+          // }
+
+          var temp1 = forecast[0].feels_like.day + "° F";
+          for_temp1.text(temp1);
+          var temp2 = forecast[1].feels_like.day + "° F";
+          for_temp2.text(temp2);
+          var temp3 = forecast[2].feels_like.day + "° F";
+          for_temp3.text(temp3);
+          var temp4 = forecast[3].feels_like.day + "° F";
+          for_temp4.text(temp4);
+          var temp5 = forecast[4].feels_like.day + "° F";
+          for_temp5.text(temp5);
+
+          var humid1 = forecast[0].humidity + "%";
+          for_humid1.text(humid1);
+          var humid2 = forecast[1].humidity + "%";
+          for_humid2.text(humid1);
+          var humid3 = forecast[2].humidity + "%";
+          for_humid3.text(humid1);
+          var humid4 = forecast[3].humidity + "%";
+          for_humid4.text(humid4);
+          var humid5 = forecast[4].humidity + "%";
+          for_humid5.text(humid5);
+
+
+          // console.log(for_temp1.text(forecast[0].feels_like.day + "° F"));
+          // for_humid1.text(forecast[0].humidity + "%");
           });
     });
 });
