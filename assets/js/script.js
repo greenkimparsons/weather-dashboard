@@ -36,31 +36,31 @@ function updateCurrentDate() {
 updateCurrentDate();
 
 function forecastDay1() {
-  for_day1.text(moment().add(1, 'days').calendar());
+  for_day1.text(moment().add(1, "days").calendar());
 }
 
 forecastDay1();
 
 function forecastDay2() {
-  for_day2.text(moment().add(2, 'days').calendar());
+  for_day2.text(moment().add(2, "days").calendar());
 }
 
 forecastDay2();
 
 function forecastDay3() {
-  for_day3.text(moment().add(3, 'days').calendar());
+  for_day3.text(moment().add(3, "days").calendar());
 }
 
 forecastDay3();
 
 function forecastDay4() {
-  for_day4.text(moment().add(4, 'days').calendar());
+  for_day4.text(moment().add(4, "days").calendar());
 }
 
 forecastDay4();
 
 function forecastDay5() {
-  for_day5.text(moment().add(5, 'days').calendar());
+  for_day5.text(moment().add(5, "days").calendar());
 }
 
 forecastDay5();
@@ -145,36 +145,81 @@ searchForm.on("submit", function () {
             uvIndex.addClass("bad");
           }
         });
-        var part = "current,minutely,hourly,alerts";
-        var queryURL2 =
-          "https://api.openweathermap.org/data/2.5/onecall?lat=" +
-          latitude +
-          "&lon=" +
-          longitude +
-          "&exclude=" +
-          part +
-          "&appid=" +
-          apiKey +
-          "&units=imperial";
-      
-        console.log(queryURL2);
-      
+      var part = "current,minutely,hourly,alerts";
+      var queryURL2 =
+        "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+        latitude +
+        "&lon=" +
+        longitude +
+        "&exclude=" +
+        part +
+        "&appid=" +
+        apiKey +
+        "&units=imperial";
+
+      console.log(queryURL2);
+
       fetch(queryURL2)
         .then(function (response2) {
           return response2.json();
         })
         .then(function (data2) {
-          
           var forecast = data2.daily;
-          // console.log(forecast);
+          console.log(forecast);
 
-          // for(var i =0; i < forecast.length; i++) {
-          //   var forecastTemp = forecast[i].feels_like.day;
-          //   var forecastHumid = forecast[i].humidity;
+          var descrArr = [];
 
-          //   var addCard = weatherDisplay.append("<div>")
-          //   addCard.addClass("card")
+          // for (var i = 0; i < forecast.length; i++) {
+          //   var description = forecast[i].weather[i].description;
+          //   descrArr.push(description);
+          //   console.log(descrArr);
 
+          //   if (description === "clear sky") {
+          //     $("<img>").attr(
+          //       "src",
+          //       "http://openweathermap.org/img/wn/01d@2x.png"
+          //     );
+          //   } else if (description === "few clouds") {
+          //     $("<img>").attr(
+          //       "src",
+          //       "http://openweathermap.org/img/wn/02d@2x.png"
+          //     );
+          //   } else if (description === "scattered clouds") {
+          //     $("<img>").attr(
+          //       "src",
+          //       "http://openweathermap.org/img/wn/03d@2x.png"
+          //     );
+          //   } else if (description === "broken clouds") {
+          //     $("<img>").attr(
+          //       "src",
+          //       "http://openweathermap.org/img/wn/04d@2x.png"
+          //     );
+          //   } else if (description === "shower rain") {
+          //     $("<img>").attr(
+          //       "src",
+          //       "http://openweathermap.org/img/wn/09d@2x.png"
+          //     );
+          //   } else if (description === "rain") {
+          //     $("<img>").attr(
+          //       "src",
+          //       "http://openweathermap.org/img/wn/10d@2x.png"
+          //     );
+          //   } else if (description === "thunderstorm") {
+          //     $("<img>").attr(
+          //       "src",
+          //       "http://openweathermap.org/img/wn/11d@2x.png"
+          //     );
+          //   } else if (description === "snow") {
+          //     $("<img>").attr(
+          //       "src",
+          //       "http://openweathermap.org/img/wn/13d@2x.png"
+          //     );
+          //   } else if (description === "mist") {
+          //     $("<img>").attr(
+          //       "src",
+          //       "http://openweathermap.org/img/wn/50d@2x.png"
+          //     );
+          //   }
           // }
 
           var temp1 = forecast[0].feels_like.day + "° F";
@@ -199,10 +244,9 @@ searchForm.on("submit", function () {
           var humid5 = forecast[4].humidity + "%";
           for_humid5.text(humid5);
 
-
           // console.log(for_temp1.text(forecast[0].feels_like.day + "° F"));
           // for_humid1.text(forecast[0].humidity + "%");
-          });
+        });
     });
 });
 
