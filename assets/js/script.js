@@ -118,7 +118,18 @@ searchForm.on("submit", function () {
           })
           .then(function (data2) {
             // var accessForecastArr = data;
-            console.log(data2);
+            console.log(data2.daily);
+
+            var forecastTemp = data2.daily;
+
+            for(var i =0; i < forecastTemp.length; i++) {
+              var forecastHumidity = forecastTemp[i].feels_like.day;
+              console.log(forecastHumidity);
+            }
+
+            // temperature.text(currentTemp + "° F");
+            // humidity.text(currentHumidity + "%");
+            // windSpeed.text(currentWindSpeed + " MPH");
       
             // for(var i =0; i < accessForecastArr.length; i+1) {
             //   var accessForecastTemp = accessForecastArr.main.temp;
