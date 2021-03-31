@@ -35,11 +35,35 @@ function updateCurrentDate() {
 
 updateCurrentDate();
 
-// function forecastDay1() {
-//   for_day1.text(moment().add(1, 'days').calendar());
-// }
+function forecastDay1() {
+  for_day1.text(moment().add(1, 'days').calendar());
+}
 
-// forecastDay1;
+forecastDay1();
+
+function forecastDay2() {
+  for_day2.text(moment().add(2, 'days').calendar());
+}
+
+forecastDay2();
+
+function forecastDay3() {
+  for_day3.text(moment().add(3, 'days').calendar());
+}
+
+forecastDay3();
+
+function forecastDay4() {
+  for_day4.text(moment().add(4, 'days').calendar());
+}
+
+forecastDay4();
+
+function forecastDay5() {
+  for_day5.text(moment().add(5, 'days').calendar());
+}
+
+forecastDay5();
 
 searchForm.on("submit", function () {
   //jQuery eventListener
@@ -130,7 +154,8 @@ searchForm.on("submit", function () {
           "&exclude=" +
           part +
           "&appid=" +
-          apiKey;
+          apiKey +
+          "&units=imperial";
       
         console.log(queryURL2);
       
